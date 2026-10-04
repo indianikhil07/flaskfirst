@@ -1,0 +1,137 @@
+```html
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Flask Calculator</title>
+
+    <style>
+        * {
+            box-sizing: border-box;
+        }
+
+        body {
+            margin: 0;
+            min-height: 100vh;
+
+            display: flex;
+            justify-content: center;
+            align-items: center;
+
+            font-family: Arial, sans-serif;
+            background: #f2f2f2;
+        }
+
+        .calculator {
+            width: 350px;
+            padding: 30px;
+
+            background: white;
+            border-radius: 15px;
+
+            box-shadow: 0 5px 20px rgba(0, 0, 0, 0.2);
+
+            text-align: center;
+        }
+
+        h1 {
+            margin-bottom: 25px;
+        }
+
+        input,
+        select,
+        button {
+            width: 100%;
+            padding: 12px;
+            margin-top: 12px;
+
+            font-size: 16px;
+            border-radius: 6px;
+        }
+
+        input,
+        select {
+            border: 1px solid #ccc;
+        }
+
+        button {
+            border: none;
+            background: #333;
+            color: white;
+            cursor: pointer;
+        }
+
+        button:hover {
+            background: #555;
+        }
+
+        .result {
+            margin-top: 25px;
+            padding: 15px;
+
+            font-size: 22px;
+            font-weight: bold;
+
+            background: #f2f2f2;
+            border-radius: 8px;
+        }
+    </style>
+</head>
+
+<body>
+
+    <div class="calculator">
+
+        <h1>Calculator</h1>
+
+        <form method="POST">
+
+            <input
+                type="number"
+                name="num1"
+                step="any"
+                placeholder="Enter first number"
+                required
+            >
+
+            <input
+                type="number"
+                name="num2"
+                step="any"
+                placeholder="Enter second number"
+                required
+            >
+
+            <select name="operation">
+
+                <option value="add">Addition (+)</option>
+
+                <option value="subtract">Subtraction (-)</option>
+
+                <option value="multiply">Multiplication (×)</option>
+
+                <option value="divide">Division (÷)</option>
+
+            </select>
+
+            <button type="submit">
+                Calculate
+            </button>
+
+        </form>
+
+        {% if result is not none %}
+            <div class="result">
+                Result: {{ result }}
+            </div>
+        {% endif %}
+
+    </div>
+
+</body>
+
+</html>
+```
